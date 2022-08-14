@@ -1,6 +1,6 @@
 import { StyleSheet, View, Pressable, Text, Platform } from 'react-native';
 
-function CategoryGridTile({ category }) {
+function CategoryGridTile({ category, onPress }) {
   return (
     <View style={styles.container}>
       <Pressable
@@ -10,6 +10,7 @@ function CategoryGridTile({ category }) {
             : styles.button
         }
         android_ripple={{ color: '#ccc' }}
+        onPress={onPress}
       >
         <View
           style={[styles.innerContainer, { backgroundColor: category.color }]}
@@ -29,8 +30,8 @@ const styles = StyleSheet.create({
     margin: 16,
     height: 150,
     borderRadius: 8,
-    elevation: 4,
     backgroundColor: 'white',
+    elevation: 4,
     shadowColor: 'black',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
