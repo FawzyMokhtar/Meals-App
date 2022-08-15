@@ -15,7 +15,11 @@ function MealsOverviewScreen({ route, navigation }) {
   const meals = MEALS.filter((meal) => meal.categoryIds.includes(categoryId));
 
   function renderMealItem(meal) {
-    return <MealItem meal={meal} />;
+    function pressHandler() {
+      navigation.navigate('MealDetails', { mealId: meal.id });
+    }
+
+    return <MealItem meal={meal} onPress={pressHandler} />;
   }
 
   return (
