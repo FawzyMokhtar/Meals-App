@@ -4,14 +4,22 @@ import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import MealDetails from '../components/meals/MealDetails';
 import MealIngredients from '../components/meals/MealIngredients';
 import MealSteps from '../components/meals/MealSteps';
+import FavoriteButton from '../components/ui/FavoriteButton';
 import { MEALS } from '../data/dummy-data';
 
 function MealDetailsScreen({ route, navigation }) {
   const mealId = route.params.mealId;
   const meal = MEALS.find((item) => item.id === mealId);
 
+  function favoritePressHandler() {}
+
   useLayoutEffect(() => {
-    navigation.setOptions({ title: meal.title });
+    navigation.setOptions({
+      title: meal.title,
+      headerRight: () => (
+        <FavoriteButton isFavorite={false} onPress={favoritePressHandler} />
+      ),
+    });
   }, [meal, navigation]);
 
   return (
