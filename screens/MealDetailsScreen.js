@@ -1,9 +1,9 @@
 import { useLayoutEffect } from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-import MealDetails from '../components/MealDetails';
-import MealIngredients from '../components/MealIngredients';
-import MealSteps from '../components/MealSteps';
+import MealDetails from '../components/meals/MealDetails';
+import MealIngredients from '../components/meals/MealIngredients';
+import MealSteps from '../components/meals/MealSteps';
 import { MEALS } from '../data/dummy-data';
 
 function MealDetailsScreen({ route, navigation }) {
